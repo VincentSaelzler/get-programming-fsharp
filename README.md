@@ -1,3 +1,8 @@
+# Credits
+Isaac Abraham wrote the book [Get Programming with F#](https://www.manning.com/books/get-programming-with-f-sharp).
+
+I'm just working through the examples in the book.
+
 # Highlights
 Important concepts to remember.
 ```f#
