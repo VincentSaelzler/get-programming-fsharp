@@ -1,3 +1,4 @@
+module Notes.Five
 open System
 
 type MMCSubtype =
@@ -9,5 +10,3 @@ type DiskType =
     | Solid
     | HardDisk of RPM:int * Platters:int
     | MMC of MMCSubtype * numPins:int
-
-printfn "Hello from F#"
