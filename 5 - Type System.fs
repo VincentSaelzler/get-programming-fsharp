@@ -1,5 +1,4 @@
 module Notes.Five
-open System
 
 type MMCType =
     | RsMMC
@@ -11,4 +10,4 @@ type DiskType =
     | HardDisk of RPM:int * Platters:int
     | MMC of MMCType * numPins:int
 
-// module Five
+let main () = "doing something"
