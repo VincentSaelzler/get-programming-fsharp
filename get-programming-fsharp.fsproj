@@ -7,11 +7,7 @@
 
   <ItemGroup>
     <Compile Include="5 - Type System.fs" />
-<<<<<<< HEAD
     <Compile Include="Program.fs" />
-=======
-    <Compile Include="main.fs" />
->>>>>>> 4d2b01b10ef6d1f89f2f6b09f111200a83b1687f
   </ItemGroup>
 
 </Project>
