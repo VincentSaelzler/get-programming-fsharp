@@ -88,33 +88,32 @@ type ComputerRecord = {
     Disks:DiskRecord list
 }
 
-let ryzen = {
-    Manufacturer = "AMD"
-    Disks = [
-        { Vendor = "ADATA"; SizeGB = 2000; Tech = Solid } // record + DU
-        { Vendor = "WD"; SizeGB = 8000; Tech = HardDisk(7200, 2) } // record + DU (with args)
-        { Vendor = "SanDisk"; SizeGB = 128; Tech = MMC(RsMMC, 2) } // record + DU (with args + nested DU)
-    ]
-}
+// let ryzen = {
+//     Manufacturer = "AMD"
+//     Disks = [
+//         { Vendor = "ADATA"; SizeGB = 2000; Tech = Solid } // record + DU
+//         { Vendor = "WD"; SizeGB = 8000; Tech = HardDisk(7200, 2) } // record + DU (with args)
+//         { Vendor = "SanDisk"; SizeGB = 128; Tech = MMC(RsMMC, 2) } // record + DU (with args + nested DU)
+//     ]
+// }
 
 // so this works, but note how inconvenient it is to have to reference disks each time
 // having a separate function to deal with the disk related stuff makes more sense
-let describeRyzenDisk (ryzen: ComputerRecord) =
-    match ryzen with
-    | { Manufacturer = manufacturer } when manufacturer <> "AMD" -> "should be AMD"
-    | { Disks = [] } -> "the computer needs a disk"
-    | { Disks = disks } when List.exists (fun disk -> disk.Vendor = "ADATA") disks  -> "watch out for that adata brand!"
-    | { Disks = disks } when List.exists (fun disk ->
-        match disk.Tech with
-        ) disks -> "is the capacity worth 5400 RPM?"
-    | _ -> "no comments"
+// let describeRyzenDisk (ryzen: ComputerRecord) =
+//     match ryzen with
+//     | { Manufacturer = manufacturer } when manufacturer <> "AMD" -> "should be AMD"
+//     | { Disks = [] } -> "the computer needs a disk"
+//     | { Disks = disks } when List.exists (fun disk -> disk.Vendor = "ADATA") disks  -> "watch out for that adata brand!"
+//     | { Disks = disks } when List.exists (fun disk ->
+//         match disk.Tech with
+//         ) disks -> "is the capacity worth 5400 RPM?"
+//     | _ -> "no comments"
 
 
 // let commentOnDisk disk =
 //     match disk with
 //     | {Vendor} = "ADATA"
 
-let commentOnTech tech =
 
 
 
@@ -122,30 +121,30 @@ let commentOnTech tech =
 
 
 
-let intel = describeRyzenDisk {
-    Manufacturer = "Intel"
-    Disks = []
-}
+// let intel = describeRyzenDisk {
+//     Manufacturer = "Intel"
+//     Disks = []
+// }
 
-let noDisk = describeRyzenDisk {
-    Manufacturer = "AMD"
-    Disks = []
-}
+// let noDisk = describeRyzenDisk {
+//     Manufacturer = "AMD"
+//     Disks = []
+// }
 
-let adata = describeRyzenDisk {
-    Manufacturer = "AMD"
-    Disks = [
-        { Vendor = "ADATA"; SizeGB = 2000; Tech = Solid } // record + DU
-        { Vendor = "WD"; SizeGB = 8000; Tech = HardDisk(7200, 2) } // record + DU (with args)
-        { Vendor = "SanDisk"; SizeGB = 128; Tech = MMC(RsMMC, 2) } // record + DU (with args + nested DU)
-    ]
-}
+// let adata = describeRyzenDisk {
+//     Manufacturer = "AMD"
+//     Disks = [
+//         { Vendor = "ADATA"; SizeGB = 2000; Tech = Solid } // record + DU
+//         { Vendor = "WD"; SizeGB = 8000; Tech = HardDisk(7200, 2) } // record + DU (with args)
+//         { Vendor = "SanDisk"; SizeGB = 128; Tech = MMC(RsMMC, 2) } // record + DU (with args + nested DU)
+//     ]
+// }
 
-let slowrpm = describeRyzenDisk {
-    Manufacturer = "AMD"
-    Disks = [
-        { Vendor = "Samsung"; SizeGB = 2000; Tech = Solid } // record + DU
-        { Vendor = "WD"; SizeGB = 8000; Tech = HardDisk(5400, 2) } // record + DU (with args)
-        { Vendor = "SanDisk"; SizeGB = 128; Tech = MMC(RsMMC, 2) } // record + DU (with args + nested DU)
-    ]
-}
+// let slowrpm = describeRyzenDisk {
+//     Manufacturer = "AMD"
+//     Disks = [
+//         { Vendor = "Samsung"; SizeGB = 2000; Tech = Solid } // record + DU
+//         { Vendor = "WD"; SizeGB = 8000; Tech = HardDisk(5400, 2) } // record + DU (with args)
+//         { Vendor = "SanDisk"; SizeGB = 128; Tech = MMC(RsMMC, 2) } // record + DU (with args + nested DU)
+//     ]
+// }
